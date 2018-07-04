@@ -7,6 +7,8 @@
   "author": "Dmitriy Strelnikov (MetromDouble)",
   "license": "ISC",
   "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "base-x": "^3.0.4",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.7",
@@ -16,6 +18,16 @@
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "chalk": "^2.0.1",
-    "eslint": "^4.18.2"
+    "eslint": "^4.18.2",
+    "nodemon": "^1.17.5",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "dev": "react-scripts start | npm run server",
+    "start": "react-scripts start",
+    "server": "nodemon ./server.js",
+    "ui-build": "react-scripts build",
+    "ui-test": "react-scripts test --env=jsdom",
+    "ui-eject": "react-scripts eject"
   }
 }
