@@ -6,6 +6,8 @@ import {
 import {
   Provider
 } from 'react-redux';
+import { MuiThemeProvider } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
 import configureStore from './redux/configureStore';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -16,9 +18,11 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <MuiThemeProvider theme={createMuiTheme({ palette: { type: 'light' } })}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('root')
 );
